@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+ul,
+p1 {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.bar1 {
+    box-shadow: 0px 1px 3px 0px #ccc;
+}
+
+.logo-img {
+    text-align: center;
+    background-color: blanchedalmond;
+    padding: 4px;
+}
+
+.logo-img img {
+    height: 60px;
+}
+
+.menu-bar {
+    background-color: #f45454;
+}
+
+.menu-bar .menu ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.menu-bar .menu ul li {
+    display: inline-block;
+}
+
+.menu-bar .menu ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 17px;
+}
+
+.slide-box {
+    height: 400px;
+    margin-top: 20px;
+}
+
+.slide-box .box1 {
+    height: 100%;
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.slide-box .box1 img {
+    height: 100%;
+    width: 100%;
+    float: left;
+}
+
+.slide-box .box2 {
+    height: 50%;
+    float: left;
+    position: relative;
+}
+
+.slide-box .box2 img {
+    height: 100%;
+    float: left;
+}
+
+.slide-box .shop-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(245, 245, 220, 0.55);
+    color: black;
+    padding: 20px 30px;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.slide-box .shop-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.home-ct-title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+.item-box {
+    height: 320px;
+    background-color: #eee;
+}
+
+.item-box .img-box {
+    width: 100%;
+    height: 80%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.item-box .img-box .view-box {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.527);
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.item-box .img-box .view-box ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+.item-box .img-box .view-box ul li i {
+    font-size: 11px;
+}
+
+.item-box .img-box .view-box ul li:hover {
+    color: black;
+    background-color: white;
+}
+
+.item-box .img-box .view-box ul li {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.438);
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    line-height: 40px;
+}
+
+.item-box:hover .view-box {
+    top: 0;
+}
+
+.item-box .img-box .status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    color: #000;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.item-box .txt-box {
+    width: 100%;
+    height: 20%;
+    float: left;
+    background-color: #eeee;
+    text-align: center;
+}
+
+.item-box .txt-box h1 {
+    font-size: 25px;
+}
+
+.item-box .txt-box p {
+    font-size: 18px;
+    color: red;
+}
+
+.category-box {
+    margin-top: 10px;
+}
+
+.category-box .left-menu {
+    background-color: rgba(255, 0, 0, 0.651);
+}
+
+.category-box .left-menu ul li {
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid white;
+}
+
+.category-box .left-menu ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 15px;
+    color: #fff;
+}
+
+.fillter-box {
+    background-color: #94383A;
+    width: 100%;
+    float: left;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.fillter-box select {
+    float: right;
+    width: 30%;
+    background-color: #94383A;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(226, 212, 212, 0.514);
+}
+
+.popup .loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 80px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.popup .loading i {
+    margin-left: 10px;
+}

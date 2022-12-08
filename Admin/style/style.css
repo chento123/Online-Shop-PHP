@@ -1,0 +1,473 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.bar1 {
+    width: 100%;
+    float: left;
+    background-color: darksalmon;
+    float: left;
+    height: 45px;
+}
+
+.bar1 .btn-menu {
+    float: left;
+    width: 15%;
+    height: 100%;
+    font-size: 25px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    padding: 4px;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    transition: 0.5s;
+}
+
+.bar1 .btn-menu img {
+    width: 20%;
+    height: 100%;
+}
+
+.bar1 .title {
+    width: 60%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #eee;
+    transition: 0.5s;
+}
+
+.bar1 .title h1 {
+    font-size: 25px;
+}
+
+.bar1 .user-infor {
+    width: 24%;
+    float: left;
+    height: 100%;
+    border-right: 1px solid #eee;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar1 .user-infor .user-email {
+    width: 85%;
+    float: left;
+    height: 100%;
+    color: white;
+    border-right: 1px solid #eee;
+    cursor: pointer;
+}
+
+.bar1 .user-infor .btn-logout {
+    width: 15%;
+    float: left;
+    height: 100%;
+    cursor: pointer;
+}
+
+.left-menu {
+    width: 15%;
+    height: 100%;
+    position: fixed;
+    top: 45px;
+    left: 0;
+    padding-right: 5px;
+    transition: 0.5s;
+}
+
+.container .con {
+    border: 1px solid #eee;
+    width: 85%;
+    height: 100%;
+    position: fixed;
+    top: 45px;
+    left: 15%;
+    transition: 0.5s;
+}
+
+.container .left-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+}
+
+.container .left-menu ul li {
+    float: left;
+    width: 100%;
+}
+
+.container .left-menu ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    background-color: #eee;
+    border-radius: 10px;
+    margin-top: 7px;
+    cursor: pointer;
+}
+
+.container .left-menu ul li a:hover {
+    background-color: chartreuse;
+    color: black;
+}
+
+.container .left-menu ul li a span {
+    margin-left: 10px;
+}
+
+.container .left-menu ul li a .bok {
+    margin-top: 7px;
+    float: right;
+}
+
+.container .left-menu ul li ul.sub-menu {
+    width: 90%;
+    float: right;
+    display: none;
+}
+
+.container .left-menu ul li ul.sub-menu li a {
+    margin-top: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.container .con .bar2 ul {
+    list-style-type: none;
+}
+
+.container .con .bar2 ul li {
+    float: left;
+    padding: 5px;
+}
+
+.btn {
+    padding: 8px 13px;
+    float: left;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
+.container {
+    float: left;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 45px;
+    left: 0;
+    background-color: burlywood;
+}
+
+.btn-add {
+    background-color: cornflowerblue;
+}
+
+.bar2 ul {
+    float: left;
+}
+
+.bar2 ul li a {
+    text-decoration: none;
+}
+
+.bar2 ul li select {
+    height: 47px;
+    padding: 8px 13px;
+    float: left;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.bar2 ul li {
+    float: left;
+    padding: 5px;
+}
+
+.bar2 ul li span {
+    padding: 8px 13px;
+    float: left;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-next {
+    background-color: cornflowerblue;
+}
+
+.btn-back {
+    background-color: cornflowerblue;
+}
+
+.container .data {
+    float: left;
+    width: 100%;
+    height: 90%;
+    overflow-y: scroll;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    float: left;
+    border-radius: 5px;
+}
+
+table tr th {
+    background-color: #eee;
+    padding: 7px;
+    border: 1px solid #ccc;
+}
+
+table tr td {
+    padding: 7px;
+    border: 1px solid #ccc;
+}
+
+table tr:nth-child(even) td {
+    background-color: rgba(0, 255, 255, 0.315);
+}
+
+table tr:nth-child(odd) td {
+    background-color: rgba(165, 42, 42, 0.454);
+}
+
+table tr td #btn-edit {
+    padding: 20px;
+    background-color: greenyellow;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+table tr td #btn-edit:hover {
+    background-color: rgba(172, 255, 47, 0.486);
+}
+
+.popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(25, 20, 20, 0.461);
+    top: 0;
+    left: 0;
+    transition: 0.4s;
+}
+
+.frm {
+    width: 780px;
+    height: 650px;
+    margin: auto;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.frm {
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 0 #eee;
+    position: relative;
+    overflow: hidden;
+}
+
+.frm .header {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.frm .header h1 {
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.dis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frm .header .btn-close {
+    width: 40px;
+    background-color: red;
+    cursor: pointer;
+    height: 100%;
+}
+
+.frm .header .btn-close:hover {
+    opacity: 0.6;
+}
+
+.frm .box {
+    padding: 10px;
+}
+
+.frm .box label {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.frm .box input[type=text] {
+    border-radius: 10px;
+    height: 30px;
+    width: 100%;
+    font-size: 17px;
+}
+
+.frm .box select {
+    border-radius: 10px;
+    height: 35px;
+    width: 101%;
+    font-size: 17px;
+}
+
+.frm .box .img-box {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    background-image: url(../img/gallery.png);
+    cursor: pointer;
+}
+
+.bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.frm .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ccc;
+}
+
+.frm .footer .btn-post {
+    float: right;
+    padding: 5px;
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
+
+.frm .footer .btn-post:hover {
+    opacity: 0.8;
+}
+
+.active {
+    background-color: purple;
+}
+
+.frm .img-box input[type=file] {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.waiting {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    /* pointer-events: none; */
+    background-color: rgba(0, 0, 0, 0.276);
+}
+
+.waiting h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+table img {
+    width: 70px;
+}
+
+.bar2 {
+    display: none;
+}
+
+table tr td span {
+    display: none;
+}
+
+.frm .upl .box .box-1 {
+    width: 40%;
+    float: left;
+    height: 100%;
+    padding: 5px;
+}
+
+.frm .upl .box .box-2 {
+    width: 59%;
+    float: right;
+    height: 60%;
+    padding: 5px;
+}
+
+.frm .upl .box .box-2 textarea {
+    width: 100%;
+    height: 240px;
+    border-radius: 15px;
+    resize: none;
+}
+
+.frm .upl .box .box-2 .pri {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.frm .upl .box .box-2 .pri div {
+    width: 30%;
+}
+
+.frm .upl .box .box-1 .pt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frm .upl .box .box-1 .pt .img-box {
+    margin: 3px;
+}
