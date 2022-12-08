@@ -178,6 +178,8 @@
                 get_user();
             }else if(frmopt==6){
                 get_invoice();
+            }else if(frmopt==7){
+                get_invoice_detail();
             }
             totalPage.text(Math.ceil(totalPage.text() / e.val()));
         });
@@ -201,6 +203,8 @@
                 get_user();
             }else if(frmopt==6){
                 get_invoice();
+            }else if(frmopt==7){
+                get_invoice_detail();
             }
         });
         $('.btn-back').click(function() {
@@ -223,6 +227,8 @@
                 get_user();
             }else if(frmopt==6){
                 get_invoice();
+            }else if(frmopt==7){
+                get_invoice_detail();
             }
         });
         $('.btn-add').click(function() {
@@ -380,6 +386,10 @@
                 get_user();
             }else if(frmopt==6){
                 get_invoice();
+            }else if(frmopt==7){
+                get_invoice_detail();
+            }else if(frmopt==7){
+                get_invoice_detail();
             }
             get_count_data();
         });

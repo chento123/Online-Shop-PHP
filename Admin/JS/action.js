@@ -10,6 +10,7 @@
         'frm-customer.php',
         'frm-user.php',
         'frm-invoice.php',
+        'frm-invoice-detail.php'
     ];
     var content = $('.container');
     var optMenu = 0;
@@ -1136,6 +1137,7 @@
             }
         });
     }
+    // save invoice
     function save_invoice(eThis) {
         var parent      = eThis.parents('.frm');
         var frm         = eThis.closest('form.upl');
@@ -1193,7 +1195,7 @@
             }
         });
     }
-    // edit cate
+    // edit invoice
     function edit_invoice(eThis) {
         var tr = eThis.parents('tr');
         ind = tr.index();
@@ -1212,4 +1214,108 @@
         body.find('.frm #txt-status select').val(status);
     }
 
-    
+
+
+    // get invoice 
+    function get_invoice_detail() {
+        get_count_data();
+        var tr = `
+                    <tr>
+                        <th>Invoice ID</th>
+                        <th width=180>Username</th>
+                        <th width=180>Customer</th>
+                        <th width=180>Product</th>
+                        <th>Quantity</th>
+                        <th>Selling Price</th>
+                        <th width=200>Amount</th>
+                    </tr>`;
+        var txt = ``;
+        $.ajax({
+            url: 'action/get-invoice-detail-json.php',
+            type: "POST",
+            data: {
+                opt: frmopt,
+                e: e.val(),
+                s: s,
+            },
+            // contentType: false,
+            cache: false,
+            // processData: false,
+            dataType: 'json',
+            beforeSend: function() {
+            },
+            success: function(data) {
+                for (i = 0; i < data.length; i++) {
+                    txt += `
+                                    <tr>
+                                        <td>${data[i]['invoice_id']}</td>
+                                        <td><span>${data[i]['user_id']}</span><p>${data[i]['userName']}</p></td>
+                                        <td><span>${data[i]['cus_id']}</span><p>${data[i]['cusName']}</p></td>
+                                        <td><span>${data[i]['product_id']}</span><p>${data[i]['productName']}</p></td>
+                                        <td>${data[i]['qty']}</td>
+                                        <td>${data[i]['sellingprice']}</td>
+                                        <td>${data[i]['amount']}</td>
+                                    </tr>    
+                                `;
+                }
+                tbl.html(tr + txt);
+            }
+        });
+    }
+    // save invoice
+    function save_invoice_detail(eThis) {
+        var parent      = eThis.parents('.frm');
+        var frm         = eThis.closest('form.upl');
+        var frm_data    = new FormData(frm[0]);
+        var id          = parent.find('#txt-id');
+        var status      = parent.find('#txt-status');     
+        var user_id     = parent.find('#txt-user'); 
+        var user_name    = parent.find('#txt-user option:selected').text();  
+        var cus_id     = parent.find('#txt-cus');  
+        var cus_name    = parent.find('#txt-cus option:selected').text(); 
+        var total     = parent.find('#txt-total');  
+        var address     = parent.find('#txt-address');    
+        $.ajax({
+            url: 'action/save-invoice.php',
+            type: "POST",
+            data: frm_data,
+            contentType: false,
+            cache: false,
+            processData: false,
+            dataType: 'json',
+            beforeSend: function() {
+                eThis.append(waiting);
+                eThis.css({
+                    'pointer-events': 'none'
+                });
+            },
+            success: function(data) {
+                if (data.edit == false) {    
+                    $('.waiting').remove();
+                    var tr = `
+                            <tr>
+                                <td>${data.id}</td>
+                                <td><span>${user_id}</span><p>${user_name}</p></td>
+                                <td><span>${cus_id}</span><p>${cus_name}</p></td>
+                                <td>${total.val()}</td>
+                                <td>${address.val()}</td>
+                                <td>${status.val()}</td>
+                            </tr>
+                        `;
+                    tbl.find("tr").eq(0).after(tr);
+                    id.val(data.id + 1);
+                    status.val('');
+                }
+                if (data.edit == true) {
+                    tbl.find('tr:eq(' + ind + ') td:eq(1)').html(`<span>${user_id.val()}</span> ` + `<p>${user_name}</p>`);
+                    tbl.find('tr:eq(' + ind + ') td:eq(2)').html(`<span>${cus_id.val()}</span> ` + `<p>${cus_name}</p>`);
+                    tbl.find('tr:eq(' + ind + ') td:eq(3)').text(total.val());
+                    tbl.find('tr:eq(' + ind + ') td:eq(4)').text(address.val());
+                    tbl.find('tr:eq(' + ind + ') td:eq(5)').text(status.val());
+                    $('.popup').remove();
+                    $('.waiting').remove();
+                }
+            }
+        });
+    }
+
